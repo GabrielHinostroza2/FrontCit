@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profesores – CITT</title>
+  <!-- Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-200 to-blue-200 h-screen">
+  <div class="flex h-full">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-lg flex flex-col">
+      <div class="p-4 text-2xl font-bold">CITT</div>
+      <nav class="flex-1 px-2 space-y-1">
+        <a href="index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M3 9.75L12 3l9 6.75V21a.75.75 0 0 1-.75.75H3.75A.75.75 0 0 1 3 21V9.75z"/>
+          </svg>
+          <span class="ml-3">Inicio</span>
+        </a>
+        <a href="profesores.html" class="flex items-center p-2 rounded bg-gray-100">
+          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          <span class="ml-3 text-blue-600">Profesores</span>
+        </a>
+        <a href="estudiantes.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M17 20h5v-2a4 4 0 0 0-4-4H4a4 4 0 0 0-4 4v2h17z"/>
+            <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/>
+          </svg>
+          <span class="ml-3">Estudiantes</span>
+        </a>
+        <a href="seguridad.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span class="ml-3">Seguridad</span>
+        </a>
+        <a href="productos.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M3 3h18v18H3V3z"/>
+          </svg>
+          <span class="ml-3">Productos</span>
+        </a>
+        <a href="proyectos.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M4 4h16v16H4V4z"/>
+          </svg>
+          <span class="ml-3">Proyectos</span>
+        </a>
+        <a href="accesos.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 8v4l3 3"/>
+            <path d="M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"/>
+          </svg>
+          <span class="ml-3">Accesos</span>
+        </a>
+        <a href="talleres.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12l8-4-8-4-8 4 8 4z"/>
+            <path d="M12 12v8"/>
+            <path d="M4 16l8 4 8-4"/>
+          </svg>
+          <span class="ml-3">Talleres</span>
+        </a>
+        <a href="eventos.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M8 7V3M16 7V3M3 11h18"/>
+            <path d="M21 11v10H3V11h18z"/>
+          </svg>
+          <span class="ml-3">Eventos</span>
+        </a>
+      </nav>
+      <div class="p-4 border-t">
+        <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 15.5a3.5 3.5 0 1 0 0-7"/>
+          </svg>
+          <span class="ml-3">Configuración</span>
+        </a>
+        <a href="#" class="flex items-center p-2 mt-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M17 16l4-4m0 0l-4-4m4 4H7"/>
+          </svg>
+          <span class="ml-3">Cerrar sesión</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <!-- Navbar -->
+      <header class="flex items-center justify-between bg-white px-6 py-4 shadow">
+        <input type="text" placeholder="Buscar profesor..." class="border rounded-full px-4 py-2 w-64 focus:outline-none focus:ring" />
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button class="p-2 rounded-full bg-gray-100">🔔</button>
+            <span class="absolute top-0 right-0 inline-block w-2 h-2 bg-red-500 rounded-full"></span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <img src="https://i.pravatar.cc/32" class="rounded-full" alt="Avatar" />
+            <span>Usuario</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contenido: Botón +, Formulario oculto y Tabla -->
+      <main class="p-6 overflow-auto">
+        <div class="flex justify-between items-center mb-4">
+          <h1 class="text-2xl font-semibold">Todos los Profesores</h1>
+          <button id="toggleForm" class="p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700" title="Agregar Profesor">
+            +
+          </button>
+        </div>
+        <div id="formContainer" class="hidden bg-white p-4 rounded-lg shadow mb-6">
+          <form id="addProfessorForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" name="name" placeholder="Nombre completo" required class="border rounded px-3 py-2 focus:outline-none focus:ring" />
+            <input type="email" name="email" placeholder="Correo electrónico" required class="border rounded px-3 py-2 focus:outline-none focus:ring" />
+            <input type="text" name="department" placeholder="Departamento" required class="border rounded px-3 py-2 focus:outline-none focus:ring" />
+            <input type="text" name="phone" placeholder="Teléfono" required class="border rounded px-3 py-2 focus:outline-none focus:ring" />
+            <input type="text" name="address" placeholder="Dirección" required class="border rounded px-3 py-2 focus:outline-none focus:ring md:col-span-2" />
+            <button type="submit" class="md:col-span-2 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Agregar Profesor</button>
+          </form>
+        </div>
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Información</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Departamento</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Teléfono</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Dirección</th>
+                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="professors-body" class="bg-white divide-y divide-gray-200">
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    const toggleBtn = document.getElementById('toggleForm');
+    const formContainer = document.getElementById('formContainer');
+    toggleBtn.addEventListener('click', () => formContainer.classList.toggle('hidden'));
+    const form = document.getElementById('addProfessorForm');
+    const tbody = document.getElementById('professors-body');
+    let nextId = 1;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = data.get('name');
+      const email = data.get('email');
+      const dept = data.get('department');
+      const phone = data.get('phone');
+      const addr = data.get('address');
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="px-6 py-4 flex items-center space-x-3">
+          <div>
+            <div class="text-sm font-medium text-gray-900">${name}</div>
+            <div class="text-xs text-gray-500">${email}</div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${nextId}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${dept}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${phone}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${addr}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-center">
+          <button class="p-1 rounded-full hover:bg-gray-100">👁️</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+      nextId++;
+      form.reset();
+      formContainer.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>

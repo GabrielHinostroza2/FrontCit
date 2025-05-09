@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil Usuario – CITT</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js para gauge -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gradient-to-br from-green-200 to-blue-200 h-screen">
+  <div class="flex h-full">
+    <!-- Sidebar idéntico al de index.html -->
+    <aside class="w-64 bg-white shadow-lg flex flex-col">
+      <div class="p-4 text-2xl font-bold">CITT</div>
+      <nav class="flex-1 px-2 space-y-1">
+        <a href="index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <span class="ml-3">Inicio</span>
+        </a>
+        <!-- ... otros enlaces ... -->
+      </nav>
+      <div class="p-4 border-t">
+        <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <span class="ml-3">Configuración</span>
+        </a>
+        <a href="#" class="flex items-center p-2 mt-2 rounded hover:bg-gray-100">
+          <span class="ml-3">Cerrar sesión</span>
+        </a>
+      </div>
+    </aside>
+    <!-- Main -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <!-- Navbar -->
+      <header class="flex items-center justify-between bg-white px-6 py-4 shadow">
+        <input type="text" placeholder="Buscar..." class="border rounded-full px-4 py-2 w-64" />
+        <div class="flex items-center space-x-4">
+          <div class="relative"><button class="p-2 rounded-full bg-gray-100">🔔</button><span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span></div>
+          <div class="flex items-center space-x-2"><img src="https://i.pravatar.cc/32" class="rounded-full" /><span>Luis</span></div>
+        </div>
+      </header>
+      <!-- Contenido perfil -->
+      <main class="p-6 overflow-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+          <!-- Tarjeta de perfil -->
+          <div class="bg-white rounded-lg shadow p-6 flex items-center space-x-6 col-span-2">
+            <img src="https://i.pravatar.cc/100" class="w-24 h-24 rounded-full" alt="Avatar" />
+            <div>
+              <h2 class="text-xl font-semibold">Gabriel Hinostroza</h2>
+              <p class="text-gray-500">Información adicional del estudiante.</p>
+              <p class="mt-2 text-sm">+569 47413310</p>
+              <p class="text-sm">ga.hinostroza@duocuc.l</p>
+            </div>
+          </div>
+          <!-- Tarjetas rápidas -->
+          <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center justify-center">
+            <p class="text-gray-500">Asistencia</p>
+            <p class="text-2xl font-bold">10%</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center justify-center">
+            <p class="text-gray-500">Carrera</p>
+            <p class="text-2xl font-bold">Ingeniería Informática</p>
+          </div>
+        </div>
+        <!-- Horario -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+          <h3 class="font-semibold mb-2">Horario del Estudiante</h3>
+          <p class="text-sm text-gray-500 mb-4">marzo 24 - 28 <a href="#" class="underline">Work Week Día</a></p>
+          <ul class="grid grid-cols-2 gap-2 text-sm text-gray-700">
+            <li>8:00</li><li>9:00</li><li>10:00</li><li>11:00</li><li>12:00</li>
+            <li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li>
+          </ul>
+        </div>
+        <!-- Sidebar derecho -->
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <div class="bg-white rounded-lg shadow p-4">
+            <h4 class="font-semibold mb-2">Accesos rápidos del estudiante</h4>
+            <button class="w-full text-left px-4 py-2 border rounded hover:bg-gray-50">Asistencias del Estudiante</button>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h4 class="font-semibold mb-4">Performance</h4>
+            <canvas id="gaugeChart"></canvas>
+            <p class="text-center mt-2">1st Semester - 2nd Semester</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-4 lg:col-span-2">
+            <h4 class="font-semibold mb-4">Anuncios</h4>
+            <div class="space-y-4">
+              <div class="p-4 bg-blue-50 rounded">Lorem ipsum dolor sit... <span class="text-xs text-gray-400 float-right">2025-01-01</span></div>
+              <div class="p-4 bg-purple-50 rounded">Lorem ipsum dolor sit... <span class="text-xs text-gray-400 float-right">2025-01-01</span></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    // Gauge Chart
+    const ctx = document.getElementById('gaugeChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [9.2, 10 - 9.2],
+          backgroundColor: ['#34D399', '#E5E7EB'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        circumference: Math.PI,
+        rotation: Math.PI,
+        cutout: '80%',
+        plugins: { tooltip: { enabled: false }, legend: { display: false } }
+      }
+    });
+  </script>
+</body>
+</html>

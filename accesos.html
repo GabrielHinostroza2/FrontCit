@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de Accesos – CITT</title>
+  <!-- Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-200 to-blue-200 h-screen">
+  <div class="flex h-full">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-lg flex flex-col">
+      <div class="p-4 text-2xl font-bold">CITT</div>
+      <nav class="flex-1 px-2 space-y-1">
+        <a href="index.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 9.75L12 3l9 6.75V21a.75.75 0 0 1-.75.75H3.75A.75.75 0 0 1 3 21V9.75z"/></svg>
+          <span class="ml-3">Inicio</span>
+        </a>
+        <a href="profesores.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span class="ml-3">Profesores</span>
+        </a>
+        <a href="estudiantes.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 0 0-4-4H4a4 4 0 0 0-4 4v2h17zM12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/></svg>
+          <span class="ml-3">Estudiantes</span>
+        </a>
+        <a href="seguridad.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="ml-3">Seguridad</span>
+        </a>
+        <a href="productos.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3z"/></svg>
+          <span class="ml-3">Productos</span>
+        </a>
+        <a href="proyectos.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4z"/></svg>
+          <span class="ml-3">Proyectos</span>
+        </a>
+        <a href="accesos.html" class="flex items-center p-2 rounded bg-gray-100">
+          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><path d="M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"/></svg>
+          <span class="ml-3 text-blue-600">Accesos</span>
+        </a>
+        <a href="talleres.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 12l8-4-8-4-8 4 8 4z"/><path d="M12 12v8"/><path d="M4 16l8 4 8-4"/></svg>
+          <span class="ml-3">Talleres</span>
+        </a>
+        <a href="eventos.html" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3M16 7V3M3 11h18"/><path d="M21 11v10H3V11h18z"/></svg>
+          <span class="ml-3">Eventos</span>
+        </a>
+      </nav>
+      <div class="p-4 border-t">
+        <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7"/></svg>
+          <span class="ml-3">Configuración</span>
+        </a>
+        <a href="#" class="flex items-center p-2 mt-2 rounded hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7"/></svg>
+          <span class="ml-3">Cerrar sesión</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <!-- Navbar -->
+      <header class="flex items-center justify-between bg-white px-6 py-4 shadow">
+        <input
+          type="text"
+          placeholder="Buscar por nombre, carrera..."
+          class="border rounded-full px-4 py-2 w-80 focus:outline-none focus:ring"
+        />
+        <div class="flex items-center space-x-6">
+          <div class="space-x-4 text-right">
+            <span class="text-gray-500">Hoy</span>
+            <span class="font-bold">0</span>
+            <span class="ml-4 text-gray-500">Activos</span>
+            <span class="font-bold text-green-600">1</span>
+            <span class="ml-4 text-gray-500">Total</span>
+            <span class="font-bold">104</span>
+          </div>
+          <div class="space-x-2">
+            <button class="p-2 bg-yellow-200 rounded-full" title="Filtro 1"></button>
+            <button class="p-2 bg-green-200 rounded-full" title="Filtro 2"></button>
+            <button class="p-2 bg-purple-200 rounded-full" title="Filtro 3"></button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contenido: Registro de Accesos -->
+      <main class="p-6 overflow-auto">
+        <h1 class="text-2xl font-semibold mb-4">Registro de Accesos</h1>
+        <div class="bg-white p-4 rounded-lg shadow mb-6">
+          <input
+            type="search"
+            placeholder="Buscar por nombre, matrícula..."
+            class="w-full border border-gray-200 rounded-full px-4 py-2 focus:outline-none focus:ring"
+          />
+        </div>
+
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Usuario</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Tipo</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Hora Entrada</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Hora Salida</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Fecha</th>
+                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Acciones</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <!-- Ejemplo de fila -->
+              <tr>
+                <td class="px-6 py-4 flex items-center space-x-3">
+                  <img class="w-8 h-8 rounded-full" src="https://i.pravatar.cc/40?img=33" alt="avatar"/>
+                  <div>
+                    <div class="text-sm font-medium text-gray-900">Gabriel Hinostroza</div>
+                    <div class="text-xs text-gray-500">ID9820</div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Estudiante</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">13:38</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">13:59</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">07 de Mayo de 2025</td>
+                <td class="px-6 py-4 whitespace-nowrap text-center">
+                  <button class="p-1 rounded-full hover:bg-gray-100">👁️</button>
+                </td>
+              </tr>
+              <!-- Más filas similares... -->
+              <tr>
+                <td class="px-6 py-4 flex items-center space-x-3">
+                  <img class="w-8 h-8 rounded-full" src="https://i.pravatar.cc/40?img=48" alt="avatar"/>
+                  <div>
+                    <div class="text-sm font-medium text-gray-900">Luis Salamanca</div>
+                    <div class="text-xs text-gray-500">ID9821</div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Estudiante</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">13:48</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">13:59</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">07 de Mayo de 2025</td>
+                <td class="px-6 py-4 whitespace-nowrap text-center">
+                  <button class="p-1 rounded-full hover:bg-gray-100">👁️</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+    </div>
+  </div>
+</body>
+</html>
